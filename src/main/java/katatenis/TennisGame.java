@@ -1,3 +1,4 @@
+package katatenis;
 
 public interface TennisGame {
     void wonPoint(String playerName);

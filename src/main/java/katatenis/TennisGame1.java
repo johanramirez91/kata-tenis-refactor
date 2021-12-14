@@ -1,3 +1,4 @@
+package katatenis;
 
 public class TennisGame1 implements TennisGame {
 
@@ -66,8 +67,8 @@ public class TennisGame1 implements TennisGame {
 
     private void getAdvantage(StringBuilder score) {
         int minusResult = scorePlayer1 - scorePlayer2;
-        if (minusResult == 1) score.append("Advantage player 1");
-        else if (minusResult == -1) score.append("Advantage player 2");
+        if (minusResult == 1) score.append("Advantage player1");
+        else if (minusResult == -1) score.append("Advantage player2");
         else if (minusResult >= 2) score.append("Win for player1");
         else score.append("Win for player2");
     }
