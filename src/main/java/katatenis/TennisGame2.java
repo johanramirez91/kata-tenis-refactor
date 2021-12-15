@@ -19,13 +19,17 @@ public class TennisGame2 implements TennisGame {
         StringBuilder score = new StringBuilder();
         if (isTieBreak()) {
             score.append(equalScores());
-        } else if (player1points >= 4 || player2points >= 4) {
+        } else if (playerScoreGreaterThan4()) {
             int scoreDifference = player1points - player2points;
             score.append(advantage(scoreDifference));
         } else {
             score.append(getScorePlayer(player1points)).append("-").append(getScorePlayer(player2points));
         }
         return score.toString();
+    }
+
+    private boolean playerScoreGreaterThan4() {
+        return player1points >= 4 || player2points >= 4;
     }
 
     public boolean isTieBreak() {

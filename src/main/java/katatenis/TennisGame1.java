@@ -66,11 +66,14 @@ public class TennisGame1 implements TennisGame {
     }
 
     private void getAdvantage(StringBuilder score) {
-        int minusResult = scorePlayer1 - scorePlayer2;
-        if (minusResult == 1) score.append("Advantage player1");
-        else if (minusResult == -1) score.append("Advantage player2");
-        else if (minusResult >= 2) score.append("Win for player1");
+        if (scoreDifference() == 1) score.append("Advantage player1");
+        else if (scoreDifference() == -1) score.append("Advantage player2");
+        else if (scoreDifference() >= 2) score.append("Win for player1");
         else score.append("Win for player2");
+    }
+
+    private int scoreDifference(){
+        return scorePlayer1 - scorePlayer2;
     }
 
     private boolean isUpTo4Points() {
